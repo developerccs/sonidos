@@ -12,6 +12,7 @@ export class HomePage {
   animales: Animal[] = [];
   audio = new Audio();
   audioTiempo: any;
+  ordenar:boolean = false;
 
   constructor() {
     this.animales = ANIMALES.slice(0); //Copia del arreglo ANIMALES
