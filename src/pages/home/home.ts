@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ANIMALES } from "../../data/data.animales";
 import { Animal } from "../../interfaces/animal.interface";
-import { Refresher } from "ionic-angular";
+import { Refresher, reorderArray } from "ionic-angular";
 
 @Component({
   selector: 'page-home',
@@ -53,13 +53,18 @@ export class HomePage {
   }
 
   recargar_animales( refresher:Refresher ){
-    console.log("Iinico del Refresh");
+    console.log("Inico del Refresh");
 
     setTimeout( ()=>{
       console.log("Termino el refresh");
       this.animales = ANIMALES.slice(0);
       refresher.complete();
     },1500)
+  }
+
+  reordenar_animales( indices:any ){
+    console.log(indices);
+    this.animales = reorderArray( this.animales, indices );
   }
 
 }

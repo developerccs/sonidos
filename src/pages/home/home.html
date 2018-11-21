@@ -12,7 +12,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-<ion-list>
+<ion-list reorder="true" (ionItemReorder)="reordenar_animales( $event )">
 
   <ion-item-sliding *ngFor="let animal of animales; let i = index">
 
